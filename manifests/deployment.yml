@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: react-test-app 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-test-app
+  template:
+    metadata:
+      labels:
+        app: react-test-app 
+    spec:
+      containers:
+        - name: react-test-app 
+          image: hhtestacr.azurecr.io/react-test-app
+          ports:
+          - containerPort: 80
